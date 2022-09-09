@@ -1,13 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import BrowseProperties from '../components/BrowseCard-section/BrowseProperties'
 import Footer from '../components/Footer/Footer'
 import RewardCard from '../components/Reward-section/RewardCard'
-import ButtonSearch from '../components/Search-section/ButtonSearch'
-import Datepicker from '../components/Search-section/DatePicker'
-import SearchAutoComplete from '../components/Search-section/SearchAutoComplete'
+
 import SearchFlight from '../components/Search-section/SearchFlight'
-import Selection from '../components/Search-section/Selection'
 import SpecialEvent from '../components/SpecialEvent-section/SpecialEvent'
 import TravelNotice from '../components/TravelNotice-section/Travelnotice'
 import styles from '../styles/Home.module.css'
