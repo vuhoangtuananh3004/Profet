@@ -1,6 +1,7 @@
 import React from 'react'
 import ButtonSearch from './ButtonSearch'
-import Datepicker from './DatePicker'
+import DateBook from './DateBook'
+
 import SearchAutoComplete from './SearchAutoComplete'
 import Selection from './Selection'
 
@@ -12,7 +13,7 @@ function SearchFlight() {
                     <SearchAutoComplete/>
                 </div>
                 <div className='w-2/6 bg-sky-400/10 rounded-full shadow-lg shadow-lime-500/60 hover:bg-sky-500/30'>
-                    <Datepicker />
+                    <DateBook/>
                 </div>
                 <div className='w-1/6 bg-sky-400/10 rounded-full shadow-lg shadow-lime-500/60 hover:bg-sky-500/30'>
                     <Selection/>

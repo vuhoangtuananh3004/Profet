@@ -3,9 +3,8 @@ import DatePicker from "react-datepicker";
 import "../../node_modules/react-datepicker/dist/react-datepicker.css"
 import subDays from 'date-fns/subDays';
 import addDays from 'date-fns/addDays';
-// import styles from '../../styles/Search.module.css'
 
-function Datepicker() {
+function DateBook() {
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
 
@@ -28,4 +27,4 @@ function Datepicker() {
     )
 }
 
-export default Datepicker
+export default DateBook
