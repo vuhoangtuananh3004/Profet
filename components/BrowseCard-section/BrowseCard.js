@@ -8,11 +8,11 @@ function BrowseCard(props) {
         <div className='flex justify-center'>
             {
                 getList.title.map((v,i)=>
-                <div class="max-w-sm rounded overflow-hidden shadow-lg p-5 hover:scale-125">
-                <img class="w-[300px] h-[200px] border border-slate-300 rounded-lg" src={getList.img[i]} alt="Sunset in the mountains" />
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-1 text-center">{v}</div>
-                    <p class="text-gray-400 text-base text-center">
+                <div key={v} className="max-w-sm rounded overflow-hidden shadow-lg p-5 hover:scale-125">
+                <img className="w-[300px] h-[200px] border border-slate-300 rounded-lg" src={getList.img[i]} alt="Sunset in the mountains" />
+                <div className="px-6 py-4">
+                    <div className="font-bold text-xl mb-1 text-center">{v}</div>
+                    <p className="text-gray-400 text-base text-center">
                         {getList.description}
                     </p>
                 </div>

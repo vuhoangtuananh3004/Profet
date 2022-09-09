@@ -11,34 +11,34 @@ function Header() {
         {
             iconStyle: <LanguageSharpIcon style={{color:'white'}} />,
             text: 'English',
-            link: '/'
+            link: '#'
         },
         {
             iconStyle: <HomeOutlinedIcon style={{color:'white'}}/>,
             text: 'List your property',
-            link: '/'
+            link: '#'
         },
         {
             iconStyle: <HelpOutlineOutlinedIcon style={{color:'white'}} />,
             text: 'Support',
-            link: '/'
+            link: '#'
         },
         {
             iconStyle: <TravelExploreOutlinedIcon style={{color:'white'}} />,
             text: 'Explore',
-            link: '/'
+            link: '#'
         },
         {
             iconStyle: <AccountCircleOutlinedIcon style={{color:'white'}} />,
             text: 'Sign in',
-            link: '/'
+            link: '#'
         },
     ]
 
 
     return (
         <div className="flex flex-row justify-between items-center p-5 shadow-lg shadow-slate-800 mb-10 bg-slate-900/90 sticky top-0 z-40">
-            <a href="/">
+            <a href="#">
                <div className='flex justify-center items-center'>
                     <CottageOutlinedIcon style={{color:'white'}} fontSize="large"/>
                     <div className='border border-white-900 ml-2 mr-2 h-10'></div>
@@ -47,7 +47,7 @@ function Header() {
             </a>
             <div className='flex flex-row'>
                 {icons.map((icon) => (
-                    <a href={icon.link} className="flex mr-5 p-2 px-5 items-center rounded-full tracking-widest border boder-white-400 shadow-lg shadow-sky-900 hover:shadow-indigo-500">
+                    <a key={icon.text} href={icon.link} className="flex mr-5 p-2 px-5 items-center rounded-full tracking-widest border boder-white-400 shadow-lg shadow-sky-900 hover:shadow-indigo-500">
                         {icon.iconStyle} <span className='text-white ml-5'>{icon.text}</span>
                     </a>
                 ))}

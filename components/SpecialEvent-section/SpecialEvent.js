@@ -53,14 +53,14 @@ function SpecialEvent() {
                             <p className='font-Sacramento text-lg text-center p-2 text'>{specialEvent.EventLocationTitle[loop]}</p>
                             <p className='text-stone-400'>{specialEvent.EventLocationDescription[loop]}</p>
                         </div>
-                        {specialEvent.EventLocation[loop].map((location) => <div className='text-stone-400'><span className='text-emerald-500'>{location[0]}</span> at {location[1]}</div>)}
+                        {specialEvent.EventLocation[loop].map((location) => <div key={location[0]} className='text-stone-400'><span className='text-emerald-500'>{location[0]}</span> at {location[1]}</div>)}
                     </div>
                 </div>
                 <div className='flex w-full border border-gray-100/20 p-2 text-center bg-gradient-to-r from-indigo-500/10'>Booking with LikeHome save {specialEvent.DiscountWithLikeHome}% more at above Event Locations, book and stay for less before Sept 30, 2022</div>
             </div>
             <div className='flex flex-col w-1/4 justify-start h-[800px] w-[600px] p-1'>
                 {
-                    specialEvent.EventImageSrc[loop].map((src) => <div className='flex h-1/2 w-full justify-center'><img src={src} className='object-contain' alt="" />
+                    specialEvent.EventImageSrc[loop].map((src) => <div key={src}className='flex h-1/2 w-full justify-center'><img src={src} className='object-contain' alt="" />
                     </div>)
                 }
             </div>
