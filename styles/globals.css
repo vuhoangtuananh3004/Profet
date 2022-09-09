@@ -1,26 +1,19 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+body{
+   background-color: #060613;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
+.date-picker{
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    color: black;
+    text-align: center;
+    border-radius: 50px;
+    background:none;
+    border: 1px solid white;
     color: white;
-    background: black;
-  }
+    letter-spacing: .1rem;
 }
