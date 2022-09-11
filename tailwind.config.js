@@ -1,25 +1,31 @@
 /** @type {import('tailwindcss').Config} */
-
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens :{
+      'xs': '390px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         Sacramento: ["Sacramento", "cursive"],
       },
-      container: {
-        screens: {
-          sm: "100%",
-          md: "100%",
-          lg: "1024px",
-          xl: "2048px"
-        }
+      screens: {
+        'sm': '650px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px'
+      }
+      ,
+      height: {
+        '2xl': "600px",
       },
-      height:{
-        '2xl': "600px"
+      width: {
+        'test': '768px',
       },
     },
   },

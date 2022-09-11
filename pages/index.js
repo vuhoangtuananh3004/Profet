@@ -25,7 +25,7 @@ export default function Home() {
     //     height='600'
     //   />
     // </div>
-    <div className='flex flex-col justify-center'>
+    <div className=''>
         <SearchFlight />
         <SpecialEvent/>
         <TravelNotice/>
