@@ -19,7 +19,7 @@ function SearchFlight() {
                     <Selection/>
                 </div>
                 <div className='w-1/7 bg-sky-400/10 rounded-full shadow-lg shadow-lime-500/60 hover:bg-sky-500/30 '>
-                    <ButtonSearch />
+                    <ButtonSearch/>
                 </div>
             </div>
             </div>
