@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { SignupContext } from '../../components/Context/SignupContext';
+import SignupContext from '../../components/Context/SignupContext';
 
 
 
