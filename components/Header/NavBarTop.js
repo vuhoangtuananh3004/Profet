@@ -1,7 +1,7 @@
 import { AccountCircleOutlined, CottageOutlined } from '@mui/icons-material'
 import Link from 'next/link'
 import React, { useContext } from 'react'
-import { StyleContext } from '../context/StyleContext'
+import { StyleContext } from '../Context/StyleContext'
 
 function NavBarTop() {
     
