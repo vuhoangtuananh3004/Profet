@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Login from './Login';
 import Signup from './Signup';
-import { SignupContext } from '../../components/Context/SignupContext';
+import  SignupContext  from '../../components/Context/SignupContext';
 import ForgotPassword from './ForgotPassword';
 
 function Account() {

@@ -1,2 +1,7 @@
 import { createContext } from "react";
-export const StyleContext = createContext({});
+
+const StyleContext = createContext({});
+
+export default StyleContext
+
+

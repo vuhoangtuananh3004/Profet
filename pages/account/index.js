@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleContext } from '../../components/Context/StyleContext'
+import  StyleContext  from '../../components/Context/StyleContext'
 import AccountLayout from '../../components/Layout/AccountLayout'
 import Account from './Account';
 

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { SignupContext } from '../../components/Context/SignupContext';
+import SignupContext  from '../../components/Context/SignupContext';
 
 function ForgotPassword() {
     const { setSignup, setForgotpass } = useContext(SignupContext)
