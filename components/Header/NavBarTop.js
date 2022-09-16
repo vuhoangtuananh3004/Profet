@@ -9,7 +9,7 @@ function NavBarTop() {
     const showStyle = (setStyle == null) ? '' : setStyle
 
     return (
-        <div className={`flex ${showStyle} flex-col hover:bg-slate-200 text-white hover:text-black sticky top-0 bg-slate-800/40`}>
+        <div className={`flex ${showStyle} flex-col hover:bg-slate-200 text-white hover:text-black sticky top-0 bg-slate-800/40 overflow-hidden `}>
             <div className='flex flex-row justify-between align-center p-7 border-b-2 border-stone-300/40'>
                 <div className='flex justify-center items-center'>
                     <CottageOutlined fontSize="large" />

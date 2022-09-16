@@ -5,7 +5,7 @@ import ArrowRightAltRoundedIcon from '@mui/icons-material/ArrowRightAltRounded';
 
 function NavBarMiddle() {
   return (
-    <div className=''>
+    <div className='overflow-hidden'>
       <img className='absolute left-0 top-0 w-full h-full' src='/main-image/California.jpeg' />
       <div className='absolute left-0 top-0 bg-slate-800/40 w-full h-full'>
         <div className='flex flex-row w-full h-full '>

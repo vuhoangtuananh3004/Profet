@@ -14,7 +14,7 @@ import PersonIcon from '@mui/icons-material/Person';
 
 function NavBarBottom() {
   return (
-    <div className="absolute mx-auto bottom-[-25px] h-[50px] w-full justify-center align-center items-center text-center">
+    <div className="absolute mx-auto bottom-[-25px] h-[50px] w-full justify-center align-center items-center text-center overflow-hidden">
     <div className='h-full w-2/4 mx-auto bg-white'>
         <div className='grid grid-cols-4 border border-slate-900/10 h-full divide-x-[3px]'>
             <div className='flex h-full w-full justify-center items-center mr-2 ml-2 hover:shadow-xl'>
