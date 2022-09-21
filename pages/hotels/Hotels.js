@@ -5,7 +5,7 @@ import Layout from '../../components/Layout/Layout';
 
 
 
-export default function Hotels() {
+export default function hotels() {
     return (
         <div className='flex mx-auto w-[600px] h-[200px] mt-20'>
  
