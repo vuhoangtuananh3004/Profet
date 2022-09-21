@@ -20,9 +20,9 @@ function NavBarTop() {
                     <button className='flex flex-col justify-center align-center px-4 text-center'>
                         <Link href="/"><p className='hover:scale-125'>HOME</p></Link>
                     </button>
-                    <button className='flex flex-col justify-center align-center px-4 text-center'>
+                    {/* <button className='flex flex-col justify-center align-center px-4 text-center'>
                         <p className='hover:scale-125'>DESTINATION</p>
-                    </button>
+                    </button> */}
                     <button className='flex flex-col justify-center align-center px-4 text-center'>
                         <p className='hover:scale-125'>ABOUT US</p>
                     </button>

@@ -36,7 +36,7 @@ function NavBarMiddle() {
               <div className='flex items-center w-1/4 h-full p-5 text-white' > <span className='hover:border-4 hover:border-slate-100 hover:rounded-full hover:p-3' onClick={previousImg}> <ArrowBackIosIcon fontSize='large' /></span></div>
               <div className='flex flex-col justify-center align-center items-center w-2/4 h-full'>
                 <span className='text-white sm:text-[35px] md:text-[60px] text-center'>{value.docs[counter].data().terms[0].value}</span>
-                <Link href={`hotels/destination/${value.docs[counter].data().id}`}><span className='text-white border border-white p-4 hover:animate-pulse hover:bg-red-400/20 cursor-pointer'>Take me there <ArrowRightAltRoundedIcon /></span></Link>
+                <Link href={`hotels/${value.docs[counter].data().id}`}><span className='text-white border border-white p-4 hover:animate-pulse hover:bg-red-400/20 cursor-pointer'>Take me there <ArrowRightAltRoundedIcon /></span></Link>
               </div>
               <div className='flex flex-row-reverse items-center w-1/4 h-full p-5 text-white'> <span className='hover:border-4 hover:border-slate-100 hover:rounded-full hover:p-3' onClick={nextImg}> <ArrowForwardIosIcon fontSize='large' /></span></div>
             </div>

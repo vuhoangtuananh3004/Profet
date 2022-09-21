@@ -60,7 +60,9 @@ function Header() {
     return (
         <div className='relative mx-auto justify-between border-b border-gray-400 w-full h-[850px]'>
             <NavBarMiddle />
-            <NavBarBottom/>
+            <div className="absolute mx-auto sm:bottom-[-50px]  md:bottom-[-25px] w-full">
+                <NavBarBottom />
+            </div>
         </div>
     )
 }
