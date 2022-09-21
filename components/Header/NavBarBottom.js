@@ -14,12 +14,12 @@ import PersonIcon from '@mui/icons-material/Person';
 
 function NavBarBottom() {
   return (
-    <div className="absolute mx-auto bottom-[-25px] h-[50px] w-full justify-center align-center items-center text-center overflow-hidden">
-    <div className='h-full w-2/4 mx-auto bg-white'>
-        <div className='grid grid-cols-4 border border-slate-900/10 h-full divide-x-[3px]'>
+    <div className="absolute mx-auto sm:bottom-[-50px]  md:bottom-[-25px] sm:h-[100px] md:h-[50px] w-full justify-center align-center items-center text-center overflow-hidden">
+    <div className='h-full sm:w-3/4 md:w-2/4 mx-auto bg-white'>
+        <div className='grid sm:grid-cols-2 md:grid-cols-4 border border-slate-900 h-full divide-x-[3px] sm:divide-y-[3px]'>
             <div className='flex h-full w-full justify-center items-center mr-2 ml-2 hover:shadow-xl'>
                 <SearchIcon />
-                <input className='h-full w-full outline-none mr-2 ml-2' placeholder='Search'></input>
+                <input className='h-full w-full outline-none mr-2 ml-2 text-center' placeholder='Search'></input>
             </div>
             <div className='flex h-full w-full justify-center items-center hover:shadow-xl'>
                 <CalendarTodayIcon className='mr-3 ml-2' /> <span className='text-slate-400'>Dates</span>

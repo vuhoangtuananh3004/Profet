@@ -1,7 +1,8 @@
 import Footer from '../Footer/Footer'
 import Header from '../Header/Header'
 import NavBarTop from '../Header/NavBarTop'
-import React from 'react'
+import React, { useContext } from 'react'
+import StyleContext from '../Context/StyleContext'
 
 function Layout({ children }) {
     return (

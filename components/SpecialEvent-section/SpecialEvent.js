@@ -17,12 +17,12 @@ function SpecialEvent() {
     }
 
     return (
-        <div className='flex flex-col w-full justify-center align-center text-center'>
+        <div className='flex flex-col w-full justify-center align-center text-center overflow-auto'>
             <span className='text-[30px] tracking-wider mt-5 p-4 font-bold'>EVENTS</span>
             <span className='w-1/5 border border-black mx-auto mb-10 border-dotted'></span>
-            <div className='flex flex-row w-4/6 mx-auto  border border-slate-900 rounded-xl mb-5 bg-slate-300/30'>
-                <img src='https://assets.website-files.com/6050de48515a7e672665ffff/622c056a7de970f45acdf800_2019-11-23_EnchantDC-5D4A0448_16.png' className='h-full w-[450px]'></img>
-                <div className='flex flex-col w-full h-full'>
+            <div className='flex lg:flex-row sm:flex-col sm:justify-center lg:w-[1000px] sm:w-[350px] h-[300px] lg:h-[300px] sm:h-[500px] mx-auto  border border-slate-900 rounded-xl mb-5 bg-slate-300/30 overflow-auto'>
+                <img src='https://assets.website-files.com/6050de48515a7e672665ffff/622c056a7de970f45acdf800_2019-11-23_EnchantDC-5D4A0448_16.png' className='h-[300px] lg:w-1/3 sm:w-full object-cover'></img>
+                <div className='flex flex-col lg:w-2/3 sm:1/3 h-[300px]'>
                     <span className='font-Sacramento text-2xl font-bold tracking-widest p-2'>{specialEvent.EventName[0]}</span>
                     <span className='font-Sacramento text-lg text-center p-2'>{specialEvent.EventDescription}</span>
                     <span className='font-bold text-xl text-left p-2'>Location: </span>
@@ -31,14 +31,14 @@ function SpecialEvent() {
                     </div>
                 </div>
             </div>
-            <div className='flex flex-row w-4/6 mx-auto  border border-slate-900 rounded-xl mb-5 bg-slate-300/30'>
-                <img src='https://images.rove.me/w_740,q_85/x4vinvbcawgluuztqmsu/san-francisco-new-years-eve-fireworks.jpg' className='h-full w-[450px]'></img>
-                <div className='flex flex-col w-full h-full'>
+            <div className='flex lg:flex-row sm:flex-col sm:justify-center lg:w-[1000px] sm:w-[350px] h-[300px] lg:h-[300px] sm:h-[500px] mx-auto  border border-slate-900 rounded-xl mb-5 bg-slate-300/30 overflow-auto'>
+                <img src='https://images.rove.me/w_740,q_85/x4vinvbcawgluuztqmsu/san-francisco-new-years-eve-fireworks.jpg' className='h-[300px] lg:w-1/3 sm:w-full object-cover'></img>
+                <div className='flex flex-col lg:w-2/3 sm:1/3 h-[300px]'>
                     <span className='font-Sacramento text-2xl font-bold tracking-widest p-2'>{specialEvent.EventName[1]}</span>
-                    <span className='font-Sacramento text-lg text-center p-2'>{specialEvent.EventDescription[1]}</span>
+                    <span className='font-Sacramento text-lg text-center p-2'>{specialEvent.EventDescription}</span>
                     <span className='font-bold text-xl text-left p-2'>Location: </span>
                     <div className='grid grid-cols-2 text-left px-10'>
-                        {specialEvent.EventLocation[1].map((location) => <div key={location[0]} className='text-stone-400'><span className='text-emerald-500'>{location[0]}</span> at {location[1]}</div>)}
+                        {specialEvent.EventLocation[1].map((location) => <div key={location[1]} className='text-stone-400'><span className='text-emerald-500'>{location[1]}</span> at {location[1]}</div>)}
                     </div>
                 </div>
             </div>

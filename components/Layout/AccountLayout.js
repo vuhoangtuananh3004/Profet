@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import StyleContext from '../Context/StyleContext'
 import Layout from './Layout'
 
 export default function AccountLayout({ children }) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import Hotels from './Hotels'
+import Hotels from './hotels'
 
 function index() {
   return (

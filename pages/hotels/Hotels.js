@@ -1,24 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useEffect } from 'react'
 
-export default function Hotels() {
-    var Amadeus = require('amadeus');
+import Layout from '../../components/Layout/Layout';
 
-    var amadeus = new Amadeus({
-        clientId: 'CC4hXjPfH1FgNF613AE0GN60cITPsddy',
-        clientSecret: 'GC4DZRAwGsVBiGfz'
-    });
-    useEffect(() => {
-        amadeus.referenceData.locations.hotels.byCity.get({
-            cityCode: 'SFO'
-          }).then(function (response) {
-            console.log(response.data);
-        }).catch(function (responseError) {
-            console.log(responseError.code);
-        });
-      
-    }, [])
+
+
+export default function Hotels() {
     return (
-        <div>Hotels</div>
+        <div className='flex mx-auto w-[600px] h-[200px] mt-20'>
+ 
+        </div>
     )
 }
