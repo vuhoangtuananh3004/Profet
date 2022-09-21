@@ -6,8 +6,24 @@ import RewardCard from '../components/Reward-section/RewardCard'
 import SpecialEvent from '../components/SpecialEvent-section/SpecialEvent'
 import TravelNotice from '../components/TravelNotice-section/Travelnotice'
 
-export default function Home() {
+// export default function Home() {
 
+//   return (
+//     <div className='md:overflow-visible'>
+//       <Layout>
+//         <Header />
+//         <TravelNotice />
+//         <BrowseProperties />
+//         <SpecialEvent />
+//         <RewardCard />
+//       </Layout>
+//     </div>
+//   )
+// }
+
+import React from 'react'
+
+function index() {
   return (
     <div className='md:overflow-visible'>
       <Layout>
@@ -20,3 +36,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default index
