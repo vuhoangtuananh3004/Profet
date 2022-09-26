@@ -6,7 +6,7 @@ import StyleContext from '../Context/StyleContext'
 
 function Layout({ children }) {
     return (
-            <div className=''>
+            <div className='flex flex-col'>
                 <div className='sticky top-0 left-0 w-full z-10 overflow-hidden'><NavBarTop /></div>
                 <div className=''>
                     {children}

@@ -5,7 +5,7 @@ import PropertyType from './PropertyType'
 function BrowseProperties() {
     const propertiesList = {
         header: 'BROWSE BY PROPERTY TYPE',
-        title: ['Hotel', 'Apartment', 'Resort', 'Vilas'],
+        title: ['Hotel room', 'Apartment', 'Resort', 'Vilas'],
         img: ['https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=80',
             'https://images.unsplash.com/photo-1525438160292-a4a860951216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
             'https://images.unsplash.com/photo-1610641818989-c2051b5e2cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80',

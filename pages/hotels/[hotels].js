@@ -10,16 +10,16 @@ import Layout from '../../components/Layout/Layout';
 
 
 function Home() {
-    const setStyle = "bg-gradient-to-r from-indigo-500 via-purple-500/20 to-pink-500"
+    // const setStyle = "bg-gradient-to-r from-indigo-500 via-purple-500/20 to-pink-500"
     const router = useRouter();
     const {hotels} = router.query;
     const [getProp, setProps] = useState([]);
     return (
-        <StyleContext.Provider value={{ setStyle }}>
+        // <StyleContext.Provider value={{ setStyle }}>
             <Layout>
                 {(hotels!=null) ? <HotelList condition={hotels}/>:<></> }
             </Layout>
-        </StyleContext.Provider>
+        // </StyleContext.Provider>
     )
 }
 export default Home

@@ -1,5 +1,6 @@
 import { AccountCircleOutlined, CottageOutlined } from '@mui/icons-material'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useContext } from 'react'
 import StyleContext  from '../Context/StyleContext'
 
@@ -7,9 +8,9 @@ function NavBarTop() {
     
     const {setStyle} = useContext(StyleContext)
     const showStyle = (setStyle == null) ? '' : setStyle
-
+    const router = useRouter()
     return (
-        <div className={`flex ${showStyle} flex-col hover:bg-slate-200 text-white hover:text-black sticky top-0 bg-slate-800/40`}>
+        <div className={`flex ${showStyle} flex-col sticky top-0  hover:bg-slate-200 text-white hover:text-black bg-slate-800/40 bg-gradient-to-r from-indigo-500 via-purple-500/20 to-pink-500`}>
             <div className='flex flex-row justify-between align-center p-7 border-b-2 border-stone-300/40'>
                 <div className='flex justify-center items-center'>
                     <CottageOutlined fontSize="large" />
