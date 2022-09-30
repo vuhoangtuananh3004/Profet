@@ -14,11 +14,8 @@ import AttachMoneyTwoToneIcon from '@mui/icons-material/AttachMoneyTwoTone';
 import StarRateTwoToneIcon from '@mui/icons-material/StarRateTwoTone';
 function HotelList(props) {
     const [data, setData] = useState([]);
-    const [filter, setFilter] = useState({
-        filterByType: [''],
-        price: '',
-        rating: '',
-    })
+    const [filterPrice, setFilterPrice] = useState('Price')
+    const [filter, setFilter] = useState([''])
     const [value, loading, error] = useDocument(
         doc(db, 'hotelByDestination', props.condition),
         {
@@ -30,25 +27,30 @@ function HotelList(props) {
         if (loading) {
             console.log('loading....')
         } else {
-            setData(value.data().data)
+            // setData(value.data().data)
             filterType(value.data().data)
         }
-    }, [loading, filter])
+    }, [loading, filter, filterPrice])
 
     function filterType(getValue) {
         let temp = getValue;
         // Filter By Type of Properties such as : Hotel, Apartment.....
-        if (filter.filterByType.length > 1) {
+        if (filter.length > 1) {
             temp = temp.filter(filterByProperty)
+
         }
-         // Filter By Rating of Properties such as : Hotel, Apartment.....
-         
+        //Filter By Price of Properties such as: Low to High , High to Low..
+        if (filterPrice != 'Price') {
+            temp = mergeSort(temp, filterPrice)
+        }
+
+        // Filter By Rating of Properties such as : Hotel, Apartment.....
         setData(temp)
     }
 
     function filterByProperty(property) {
-        for (let i = 1; i < filter.filterByType.length; i++) {
-            if (property.spaceType == filter.filterByType[i]) {
+        for (let i = 1; i < filter.length; i++) {
+            if (property.spaceType == filter[i]) {
                 return true
             }
         }
@@ -57,25 +59,81 @@ function HotelList(props) {
 
     const filterValue = (e, type) => {
         e.preventDefault()
+       
         let tempStyle = document.getElementById(type)
-        if (!filter.filterByType.includes(type)) {
-            setFilter({ filterByType: [...filter.filterByType, type] })
+        let temp = filter;
+        if (!temp.includes(type)) {
+            setFilter([...temp, type])
             tempStyle.classList.add('text-yellow-400')
         } else {
-            let temp = filter.filterByType;
             temp.splice(temp.indexOf(type), 1)
-            setFilter({ filterByType: temp })
+            setFilter(temp)
             tempStyle.classList.remove('text-yellow-400')
-        }
+            if(temp.length == 1){
+                setFilter([''])
+            }
+        }  
+
+    }
+    const priceConvert = (priceTemp) => {
+        let temp = priceTemp.price.split("$")
+        return Math.floor(((temp[1].split(",")).join('') / 30))
     }
 
+    const mergeSort = (nums) => {
+        if (nums.length < 2) return nums;
+        var mid = Math.floor(nums.length / 2);
+        var left = nums.slice(0, mid);
+        var right = nums.slice(mid);
+
+        function merge(left, right) {
+            var result = [], lLen = left.length, rLen = right.length, l = 0, r = 0;
+            while (l < lLen && r < rLen) {
+                if (priceConvert(left[l]) < priceConvert(right[r]) && filterPrice == "Low") {
+                    result.push(left[l++]);
+                } else if (priceConvert(left[l]) > priceConvert(right[r]) && filterPrice == "High") {
+                    result.push(left[l++]);
+                }
+                else {
+                    result.push(right[r++]);
+                }
+            }
+            return result.concat(left.slice(l)).concat(right.slice(r));
+        }
+
+        return merge(mergeSort(left), mergeSort(right));
+    }
+
+    const priceFilter = (e, temp) => {
+        e.preventDefault();
+        let visibleToggle = document.getElementById('price')
+        let visibleStyle = document.getElementById('priceStyle')
+       
+        if (temp == "Price") {
+            if (visibleToggle.classList.contains("hidden")) {
+                visibleToggle.classList.remove("hidden")
+                visibleStyle.classList.add("text-yellow-400")
+            } else {
+                visibleToggle.classList.add("hidden")
+                visibleStyle.classList.remove("text-yellow-400")
+            }
+            setFilterPrice("Price")
+        }
+        if (temp == "Low") {
+            setFilterPrice("Low")
+            visibleToggle.classList.add("hidden")
+        }
+        if (temp == "High") {
+            setFilterPrice("High")
+            visibleToggle.classList.add("hidden")
+        }
+    }
     return (
         <div>
-            {/* {(filter.filterByType).map(doc => "   " + doc)} */}
-            <div className='flex flex-col mx-auto items-center align-center sticky top-[95px] bg-slate-900/40 p-2'>
+            <div className='flex flex-col items-center align-center sticky top-[95px] bg-slate-900/40 p-2'>
                 <NavBarBottom />
                 <div className='grid md:grid-rows-2 grid-flow-col xs:gap-2 xs:p-1 sm:gap-4 sm:p-2 md:gap-10 md:p-6 text-white font-bold'>
-                    <div className='xs:hidden sm:flex row-span-2 align-center items-center justify-center text-md font-bold tracking-wide'>Filter By:</div>
+                    <div className='xs:hidden sm:flex row-span-2 align-center items-center justify-center text-md font-bold tracking-wide'>Filter:</div>
                     <div className='flex flex-col row-span-2 align-center items-center justify-center cursor-pointer' onClick={event => filterValue(event, 'Hotel room')} id='Hotel room'>
                         <HotelTwoToneIcon />
                         <span>Hotel</span>
@@ -88,13 +146,15 @@ function HotelList(props) {
                         <HouseTwoToneIcon />
                         <span>Guest</span>
                     </div>
-                    <div className='flex flex-col row-span-2 align-center items-center justify-center'>
-                        <AttachMoneyTwoToneIcon />
-                        <span>Price</span>
-                        <div className='absolute bottom-[-2px]'>
-                            <div className='flex flex-row'>
-                                <div>Low to High</div>
-                                <div>High to Low</div>
+                    <div className='flex flex-col row-span-2 align-center items-center justify-center cursor-pointer'>
+                        <div className='flex flex-col items-center' onClick={event => priceFilter(event, 'Price')} id="priceStyle">
+                            <AttachMoneyTwoToneIcon />
+                            <span>{filterPrice}</span>
+                        </div>
+                        <div className='absolute bottom-0 hidden' id="price">
+                            <div className='flex flex-row w-[100px] justify-between p-1'>
+                                <div onClick={event => priceFilter(event, 'Low')}>Low</div>
+                                <div onClick={event => priceFilter(event, 'High')}>High</div>
                             </div>
                         </div>
                     </div>

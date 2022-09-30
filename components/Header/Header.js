@@ -4,17 +4,12 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
-import CottageOutlinedIcon from '@mui/icons-material/CottageOutlined';
-import SearchAutoComplete from '../Search-section/SearchAutoComplete';
-import NavBarTop from './NavBarTop';
-import SearchIcon from '@mui/icons-material/Search';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import PersonIcon from '@mui/icons-material/Person';
 
 import NavBarMiddle from './NavBarMiddle';
 import NavBarBottom from './NavBarBottom';
 function Header() {
     const [menu, setMenu] = useState(false);
+    const [loading, setLoading] = useState(true)
     const icons = [
         {
             iconStyle: <LanguageSharpIcon style={{ color: 'white' }} />,
@@ -56,6 +51,7 @@ function Header() {
 
     }
 
+   
 
     return (
         <div className='relative mx-auto justify-between border-b border-gray-400 w-full h-[850px]'>

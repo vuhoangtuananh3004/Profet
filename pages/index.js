@@ -5,34 +5,23 @@ import Layout from '../components/Layout/Layout'
 import RewardCard from '../components/Reward-section/RewardCard'
 import SpecialEvent from '../components/SpecialEvent-section/SpecialEvent'
 import TravelNotice from '../components/TravelNotice-section/Travelnotice'
-
-// export default function Home() {
-
-//   return (
-//     <div className='md:overflow-visible'>
-//       <Layout>
-//         <Header />
-//         <TravelNotice />
-//         <BrowseProperties />
-//         <SpecialEvent />
-//         <RewardCard />
-//       </Layout>
-//     </div>
-//   )
-// }
+import { store } from '../components/Store/store'
+import { Provider } from 'react-redux'
 
 import React from 'react'
 
 function index() {
   return (
     <div className='md:overflow-visible'>
-      <Layout>
-        <Header />
-        <TravelNotice />
-        <BrowseProperties />
-        <SpecialEvent />
-        <RewardCard />
-      </Layout>
+      <Provider store={store} >
+        <Layout>
+          <Header />
+           <TravelNotice />
+          <BrowseProperties />
+          <SpecialEvent />
+          <RewardCard />
+        </Layout>
+      </Provider>
     </div>
   )
 }
